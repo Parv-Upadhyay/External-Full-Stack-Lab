@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "username": "Parv Upadhyay",
+      "password": "$2a$12$shgSIodxBSInTJ..oefFHebHVELZqcgBb.VUqucwlEtDX7viCB9di",
+      "fullName": "Parv Upadhyay",
+      "country": "India",
+      "dietaryPreference": "Indian",
+      "_id": "1777867196940"
+    }
+  ],
+  "recipes": [
+    {
+      "dishName": "Apple ",
+      "ingredients": "Apple ",
+      "cookingTime": 30,
+      "difficulty": "Easy",
+      "instructions": "Apple",
+      "user": "1777867196940",
+      "_id": "1777867216295",
+      "createdAt": "2026-05-04T04:00:16.295Z"
+    }
+  ]
+}

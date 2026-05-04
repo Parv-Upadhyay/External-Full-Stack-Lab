@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <div class="container mt-4">
+    <h1>Recipes</h1>
+    <% if (currentUser) { %>
+      <a href="/recipes/new" class="btn btn-primary mb-3">Add New Recipe</a>
+    <% } %>
+    <div class="row">
+      <% recipes.forEach(recipe => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= recipe.dishName %></h5>
+              <p class="card-text">By: <%= recipe.user ? recipe.user.fullName : 'Unknown' %></p>
+              <p class="card-text">Difficulty: <%= recipe.difficulty %></p>
+              <p class="card-text">Cooking Time: <%= recipe.cookingTime %> mins</p>
+              <a href="/recipes/<%= recipe._id %>" class="btn btn-info">View</a>
+              <% if (currentUser && recipe.user && currentUser._id === recipe.user._id) { %>
+                <a href="/recipes/<%= recipe._id %>/edit" class="btn btn-warning">Edit</a>
+                <form action="/recipes/<%= recipe._id %>" method="POST" class="d-inline">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                </form>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

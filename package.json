@@ -1,0 +1,24 @@
+{
+  "name": "recipe-app",
+  "version": "1.0.0",
+  "description": "Full-stack recipe management app with authentication",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9",
+    "lowdb": "^6.0.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
